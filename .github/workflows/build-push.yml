@@ -3,6 +3,7 @@ name: Build & Push to Harbor
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-push:
@@ -23,7 +24,7 @@ jobs:
       - name: Log in to Harbor
         uses: docker/login-action@v3
         with:
-          registry: harbor.10.0.0.200.nip.io
+          registry: harbor.devandre.sbs
           username: ${{ secrets.HARBOR_USER }}
           password: ${{ secrets.HARBOR_PASSWORD }}
 
@@ -32,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: harbor.10.0.0.200.nip.io/library/ktayl-solution-web:${{ steps.sha.outputs.short }}
+          tags: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.sha.outputs.short }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
