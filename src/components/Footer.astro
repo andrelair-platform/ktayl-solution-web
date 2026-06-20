@@ -1,0 +1,64 @@
+---
+const lobs = ['Marine', 'Aviation', 'Property & Engineering', 'Liability', 'Financial Lines', 'Energy', 'Cyber'];
+const services = ['Risk Assessment', 'Policy Placement', 'Claims Advisory', 'Actuarial Consulting', 'Regulatory Compliance'];
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[#00233A] text-slate-300">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- Brand -->
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 bg-[#E8690B] rounded flex items-center justify-center">
+          <span class="text-white font-bold text-sm">K</span>
+        </div>
+        <span class="text-white font-semibold text-lg">ktayl-solution</span>
+      </div>
+      <p class="text-sm leading-relaxed text-slate-400">
+        Specialty insurance consulting and risk advisory for complex global risks.
+      </p>
+    </div>
+
+    <!-- Insurance Lines -->
+    <div>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Insurance Lines</h4>
+      <ul class="space-y-2">
+        {lobs.map(l => (
+          <li><a href={`/services#${l.toLowerCase().replace(/[^a-z]/g,'-')}`} class="text-sm text-slate-400 hover:text-white transition-colors">{l}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Services</h4>
+      <ul class="space-y-2">
+        {services.map(s => (
+          <li><a href="/services" class="text-sm text-slate-400 hover:text-white transition-colors">{s}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li>contact@ktayl-solution.com</li>
+        <li>Paris, France</li>
+        <li class="pt-2">
+          <a href="/#contact" class="btn-primary text-sm py-2 px-4">Get in touch</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <span>© {year} ktayl-solution. All rights reserved.</span>
+      <span>
+        Powered by <a href="https://github.com/andrelair-platform" class="hover:text-slate-300 underline underline-offset-2">minicloud platform</a>
+        · Deployed via ArgoCD + Cloudflare
+      </span>
+    </div>
+  </div>
+</footer>

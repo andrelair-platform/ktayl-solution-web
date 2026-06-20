@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { lobs } from '../data/lob';
+---
+
+<Layout title="Services" description="ktayl-solution services by line of business — Marine, Aviation, Property & Engineering, Liability, Financial Lines, Energy, Cyber.">
+
+  <!-- Page header -->
+  <div class="pt-32 pb-16" style="background:linear-gradient(135deg,#00233A,#00375A);">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="section-label">Our Services</span>
+      <h1 class="text-5xl font-bold text-white mb-4">Services by Line of Business</h1>
+      <p class="text-slate-300 text-xl max-w-2xl leading-relaxed">
+        Every engagement starts with your specific risk. Below you'll find the full service offering organised by insurance line, with the sectors we serve for each class.
+      </p>
+      <!-- LOB anchor nav -->
+      <div class="flex flex-wrap gap-2 mt-8">
+        {lobs.map(l => (
+          <a href={`#${l.id}`}
+             class="text-xs font-semibold border border-white/30 text-white hover:bg-white hover:text-[#00375A] px-3 py-1.5 rounded-full transition-colors">
+            {l.icon} {l.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- LOB sections -->
+  <div class="bg-white">
+    {lobs.map((lob, i) => (
+      <section
+        id={lob.id}
+        class={`py-20 scroll-mt-20 ${i % 2 === 1 ? 'bg-slate-50' : 'bg-white'}`}
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- LOB header -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-12">
+            <div class="flex items-start gap-5">
+              <div class="text-5xl shrink-0">{lob.icon}</div>
+              <div>
+                <span class="section-label">{lob.tagline}</span>
+                <h2 class="text-3xl font-bold text-[#00375A]">{lob.name}</h2>
+                <p class="text-slate-500 mt-3 max-w-2xl leading-relaxed">{lob.description}</p>
+              </div>
+            </div>
+            <!-- Sector tags -->
+            <div class="shrink-0">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Sectors served</div>
+              <div class="flex flex-wrap gap-2 max-w-xs">
+                {lob.sectors.map(s => (
+                  <span class="text-xs bg-[#00375A] text-white px-3 py-1 rounded-full font-medium">{s}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Service cards -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {lob.services.map(svc => (
+              <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#E8690B] transition-all duration-200 p-5">
+                <div class="w-8 h-1 bg-[#E8690B] rounded mb-4"></div>
+                <h3 class="font-semibold text-[#00375A] text-sm mb-2">{svc.title}</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">{svc.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <!-- Divider -->
+          {i < lobs.length - 1 && (
+            <div class="mt-16 border-b border-slate-100"></div>
+          )}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <!-- CTA bottom -->
+  <section style="background:linear-gradient(135deg,#00233A,#00375A);" class="py-20">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to discuss your risk?</h2>
+      <p class="text-slate-300 mb-8 leading-relaxed">
+        Our consultants are available across all seven lines. Tell us about your exposure and we'll propose the right advisory approach.
+      </p>
+      <a href="/#contact" class="btn-primary">Contact a Specialist →</a>
+    </div>
+  </section>
+
+</Layout>
