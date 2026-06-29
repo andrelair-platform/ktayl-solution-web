@@ -37,17 +37,29 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Import GPG signing key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_config_global: true
+
       - name: Bump image tag in minicloud-gitops
         env:
           GH_TOKEN: ${{ secrets.GITOPS_TOKEN }}
           NEW_TAG: ${{ steps.sha.outputs.short }}
         run: |
           git config --global user.name  "AndreLair"
-          git config --global user.email "andrelairelyvan.kanmegnetabouguie@ynov.com"
+          git config --global user.email "andrelaurelyvan.kanmegnetabouguie@ynov.com"
           git clone "https://x-access-token:${GH_TOKEN}@github.com/andrelair-platform/minicloud-gitops.git" /tmp/gitops
           cd /tmp/gitops
           sed -i "s|harbor.10.0.0.200.nip.io/library/ktayl-solution-web:.*|harbor.10.0.0.200.nip.io/library/ktayl-solution-web:${NEW_TAG}|" \
             manifests/ktayl-solution-web/00-deployment.yaml
           git add manifests/ktayl-solution-web/00-deployment.yaml
-          git commit -m "ci(ktayl-solution-web): bump image to ${NEW_TAG}"
+          if git diff --cached --quiet; then
+            echo "No change — image already at ${NEW_TAG}"
+            exit 0
+          fi
+          git commit -S -m "ci(ktayl-solution-web): bump image to ${NEW_TAG}"
           git push origin main
