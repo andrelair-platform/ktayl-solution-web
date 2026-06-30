@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write   # Cosign keyless signing — GitHub OIDC token
 
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +30,7 @@ jobs:
           password: ${{ secrets.HARBOR_PASSWORD }}
 
       - name: Build & push image
+        id: build
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -46,6 +48,29 @@ jobs:
           severity: CRITICAL
           ignore-unfixed: true
 
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Install syft
+        uses: anchore/sbom-action/download-syft@v0
+
+      - name: Generate SBOM (CycloneDX JSON)
+        run: |
+          syft harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }} \
+            -o cyclonedx-json=sbom.json
+
+      - name: Sign image (keyless — GitHub OIDC → Sigstore Fulcio)
+        run: |
+          cosign sign --yes \
+            harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }}
+
+      - name: Attach SBOM to image as OCI referrer
+        run: |
+          cosign attach sbom \
+            --sbom sbom.json \
+            --type cyclonedx \
+            harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }}
+
       - name: Import GPG signing key
         uses: crazy-max/ghaction-import-gpg@v6
         with:
@@ -59,7 +84,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITOPS_TOKEN }}
           NEW_TAG: ${{ steps.sha.outputs.short }}
         run: |
-          git config --global user.name  "AndreLair"
+          git config --global user.name  "AndreLiar"
           git config --global user.email "andrelaurelyvan.kanmegnetabouguie@ynov.com"
           git clone "https://x-access-token:${GH_TOKEN}@github.com/andrelair-platform/minicloud-gitops.git" /tmp/gitops
           cd /tmp/gitops
