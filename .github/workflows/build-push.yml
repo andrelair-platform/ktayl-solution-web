@@ -72,7 +72,7 @@ jobs:
             harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }}
 
       - name: Import GPG signing key
-        uses: crazy-max/ghaction-import-gpg@v6
+        uses: crazy-max/ghaction-import-gpg@v7
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           git_user_signingkey: true
