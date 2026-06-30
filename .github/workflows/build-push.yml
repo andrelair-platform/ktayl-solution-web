@@ -37,6 +37,15 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Scan image for vulnerabilities (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.sha.outputs.short }}
+          format: table
+          exit-code: '1'
+          severity: CRITICAL
+          ignore-unfixed: true
+
       - name: Import GPG signing key
         uses: crazy-max/ghaction-import-gpg@v6
         with:
