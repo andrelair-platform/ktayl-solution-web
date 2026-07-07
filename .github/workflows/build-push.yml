@@ -2,7 +2,7 @@ name: Build & Push to Harbor
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging, dev]
   workflow_dispatch:
 
 jobs:
@@ -10,14 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write   # Cosign keyless signing — GitHub OIDC token
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set short SHA
-        id: sha
-        run: echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Compute image tag
+        id: meta
+        run: |
+          SHA=$(git rev-parse --short HEAD)
+          BRANCH=${GITHUB_REF_NAME}
+          if [ "$BRANCH" = "main" ]; then
+            TAG="${SHA}"
+          else
+            TAG="${BRANCH}-${SHA}"
+          fi
+          echo "tag=${TAG}"       >> "$GITHUB_OUTPUT"
+          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -35,36 +44,41 @@ jobs:
         with:
           context: .
           push: true
-          tags: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.sha.outputs.short }}
+          tags: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.meta.outputs.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
       - name: Scan image for vulnerabilities (Trivy)
         uses: aquasecurity/trivy-action@0.28.0
         with:
-          image-ref: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.sha.outputs.short }}
+          image-ref: harbor.devandre.sbs/library/ktayl-solution-web:${{ steps.meta.outputs.tag }}
           format: table
           exit-code: '1'
           severity: CRITICAL
           ignore-unfixed: true
 
       - name: Install Cosign
+        if: github.ref_name != 'dev'
         uses: sigstore/cosign-installer@v3
 
       - name: Install syft
+        if: github.ref_name == 'main'
         uses: anchore/sbom-action/download-syft@v0
 
       - name: Generate SBOM (CycloneDX JSON)
+        if: github.ref_name == 'main'
         run: |
           syft harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }} \
             -o cyclonedx-json=sbom.json
 
       - name: Sign image (keyless — GitHub OIDC → Sigstore Fulcio)
+        if: github.ref_name != 'dev'
         run: |
           cosign sign --yes \
             harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }}
 
       - name: Attach SBOM to image as OCI referrer
+        if: github.ref_name == 'main'
         run: |
           cosign attach sbom \
             --sbom sbom.json \
@@ -72,6 +86,7 @@ jobs:
             harbor.devandre.sbs/library/ktayl-solution-web@${{ steps.build.outputs.digest }}
 
       - name: Import GPG signing key
+        if: github.ref_name == 'main'
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -79,10 +94,11 @@ jobs:
           git_commit_gpgsign: true
           git_config_global: true
 
-      - name: Bump image tag in minicloud-gitops
+      - name: Bump image tag in minicloud-gitops (main only)
+        if: github.ref_name == 'main'
         env:
           GH_TOKEN: ${{ secrets.GITOPS_TOKEN }}
-          NEW_TAG: ${{ steps.sha.outputs.short }}
+          NEW_TAG: ${{ steps.meta.outputs.tag }}
         run: |
           git config --global user.name  "AndreLiar"
           git config --global user.email "andrelaurelyvan.kanmegnetabouguie@ynov.com"
