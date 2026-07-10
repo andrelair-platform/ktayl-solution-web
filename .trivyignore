@@ -1,0 +1,5 @@
+# CVE-2026-42945: nginx 1.28.2-r1 → 1.28.3-r1
+# Trivy reports fix in 1.28.3-r1 but the Alpine 3.22 package repo has not yet published
+# that version. apk upgrade cannot install it. Re-check when 1.28.3-r1 lands in Alpine.
+# exp:2026-08-10
+CVE-2026-42945
