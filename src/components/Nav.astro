@@ -3,7 +3,6 @@ const links = [
   { label: 'Insurance Lines', href: '/#lob' },
   { label: 'Services', href: '/services' },
   { label: 'About', href: '/#about' },
-  { label: 'Platform', href: '/#platform' },
   { label: 'Contact', href: '/#contact' },
 ];
 ---
@@ -25,6 +24,74 @@ const links = [
       ))}
     </nav>
 
-    <a href="/#contact" class="btn-primary text-sm py-2 px-4">Get in touch</a>
+    <div class="flex items-center gap-3">
+      <a href="/#contact" class="hidden md:inline-block btn-primary text-sm py-2 px-4">Get in touch</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button
+        id="menu-toggle"
+        class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg hover:bg-white/10 transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span class="hamburger-line block w-5 h-0.5 bg-white transition-all duration-200"></span>
+        <span class="hamburger-line block w-5 h-0.5 bg-white mt-1.5 transition-all duration-200"></span>
+        <span class="hamburger-line block w-5 h-0.5 bg-white mt-1.5 transition-all duration-200"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-white/10 bg-[#00375A]"
+  >
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
+      {links.map(l => (
+        <a
+          href={l.href}
+          class="mobile-nav-link text-slate-200 hover:text-white hover:bg-white/10 text-sm font-medium px-3 py-2.5 rounded-lg transition-colors"
+        >
+          {l.label}
+        </a>
+      ))}
+      <div class="pt-3 mt-2 border-t border-white/10">
+        <a href="/#contact" class="btn-primary text-sm py-2.5 px-4 w-full text-center block">
+          Get in touch
+        </a>
+      </div>
+    </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const lines = document.querySelectorAll<HTMLElement>('.hamburger-line');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+
+    if (!isOpen) {
+      lines[0]?.style.setProperty('transform', 'translateY(8px) rotate(45deg)');
+      lines[1]?.style.setProperty('opacity', '0');
+      lines[2]?.style.setProperty('transform', 'translateY(-8px) rotate(-45deg)');
+    } else {
+      lines[0]?.style.removeProperty('transform');
+      lines[1]?.style.removeProperty('opacity');
+      lines[2]?.style.removeProperty('transform');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      lines[0]?.style.removeProperty('transform');
+      lines[1]?.style.removeProperty('opacity');
+      lines[2]?.style.removeProperty('transform');
+    });
+  });
+</script>

@@ -18,7 +18,7 @@ import { lobs } from '../data/lob';
         {lobs.map(l => (
           <a href={`#${l.id}`}
              class="text-xs font-semibold border border-white/30 text-white hover:bg-white hover:text-[#00375A] px-3 py-1.5 rounded-full transition-colors">
-            {l.icon} {l.name}
+            {l.name}
           </a>
         ))}
       </div>
@@ -36,7 +36,11 @@ import { lobs } from '../data/lob';
           <!-- LOB header -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-12">
             <div class="flex items-start gap-5">
-              <div class="text-5xl shrink-0">{lob.icon}</div>
+              <div class="w-14 h-14 rounded-xl bg-[#E8690B]/10 flex items-center justify-center text-[#E8690B] shrink-0">
+                <div class="w-7 h-7">
+                  <Fragment set:html={lob.icon} />
+                </div>
+              </div>
               <div>
                 <span class="section-label">{lob.tagline}</span>
                 <h2 class="text-3xl font-bold text-[#00375A]">{lob.name}</h2>
@@ -57,7 +61,7 @@ import { lobs } from '../data/lob';
           <!-- Service cards -->
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {lob.services.map(svc => (
-              <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#E8690B] transition-all duration-200 p-5">
+              <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#E8690B]/40 transition-all duration-200 p-5">
                 <div class="w-8 h-1 bg-[#E8690B] rounded mb-4"></div>
                 <h3 class="font-semibold text-[#00375A] text-sm mb-2">{svc.title}</h3>
                 <p class="text-xs text-slate-500 leading-relaxed">{svc.description}</p>
@@ -81,7 +85,7 @@ import { lobs } from '../data/lob';
       <p class="text-slate-300 mb-8 leading-relaxed">
         Our consultants are available across all seven lines. Tell us about your exposure and we'll propose the right advisory approach.
       </p>
-      <a href="/#contact" class="btn-primary">Contact a Specialist →</a>
+      <a href="/#contact" class="btn-primary">Contact a Specialist &#8594;</a>
     </div>
   </section>
 

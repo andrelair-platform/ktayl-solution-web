@@ -13,10 +13,12 @@ export interface LOB {
   sectors: string[];
 }
 
+const svgAttrs = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"`;
+
 export const lobs: LOB[] = [
   {
     id: 'marine',
-    icon: '🚢',
+    icon: `<svg ${svgAttrs}><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 12h14"/><path d="M5 12c0 3.87 3.13 7 7 7s7-3.13 7-7"/></svg>`,
     name: 'Marine',
     tagline: 'Cargo, Hull & Marine Liability',
     description:
@@ -31,7 +33,7 @@ export const lobs: LOB[] = [
   },
   {
     id: 'aviation',
-    icon: '✈️',
+    icon: `<svg ${svgAttrs}><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
     name: 'Aviation',
     tagline: 'Aircraft Hull, Liability & Passenger Risk',
     description:
@@ -46,7 +48,7 @@ export const lobs: LOB[] = [
   },
   {
     id: 'property-engineering',
-    icon: '🏗️',
+    icon: `<svg ${svgAttrs}><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg>`,
     name: 'Property & Engineering',
     tagline: 'Industrial All Risk, Construction & Machinery',
     description:
@@ -61,22 +63,22 @@ export const lobs: LOB[] = [
   },
   {
     id: 'liability',
-    icon: '⚖️',
+    icon: `<svg ${svgAttrs}><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>`,
     name: 'Liability',
-    tagline: 'General, Products & Employer\'s Liability',
+    tagline: "General, Products & Employer's Liability",
     description:
-      'Broad liability consulting spanning commercial general liability, products recall, employer\'s liability and professional indemnity. We design programmes that match exposure across jurisdictions.',
+      "Broad liability consulting spanning commercial general liability, products recall, employer's liability and professional indemnity. We design programmes that match exposure across jurisdictions.",
     services: [
       { title: 'General Liability Audit', description: 'Exposure review across premises, operations, products completed and contractual liability under civil law frameworks.' },
       { title: 'Products Recall Advisory', description: 'First-party recall cost, rehabilitation, extortion and contamination cover structuring for FMCG and pharma.' },
-      { title: 'Employer\'s Liability', description: 'Statutory and excess EL placement for multinationals with complex cross-border workforce exposures.' },
+      { title: "Employer's Liability", description: 'Statutory and excess EL placement for multinationals with complex cross-border workforce exposures.' },
       { title: 'Professional Indemnity', description: 'PI coverage for consultancies, engineers, IT service providers, and regulated professionals.' },
     ],
     sectors: ['Consumer Goods', 'Pharma & Life Sciences', 'Professional Services', 'Multinationals'],
   },
   {
     id: 'financial-lines',
-    icon: '📊',
+    icon: `<svg ${svgAttrs}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
     name: 'Financial Lines',
     tagline: 'D&O, E&O, Crime & Management Liability',
     description:
@@ -91,7 +93,7 @@ export const lobs: LOB[] = [
   },
   {
     id: 'energy',
-    icon: '⚡',
+    icon: `<svg ${svgAttrs}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
     name: 'Energy',
     tagline: 'Offshore, Onshore & Renewable Energy',
     description:
@@ -106,7 +108,7 @@ export const lobs: LOB[] = [
   },
   {
     id: 'cyber',
-    icon: '🔐',
+    icon: `<svg ${svgAttrs}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
     name: 'Cyber',
     tagline: 'Cyber Risk, Data Breach & Business Interruption',
     description:
