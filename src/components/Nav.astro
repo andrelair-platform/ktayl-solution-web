@@ -10,9 +10,20 @@ const links = [
 <header class="fixed top-0 inset-x-0 z-50 bg-[#00375A]/95 backdrop-blur-sm border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3">
-      <div class="w-8 h-8 bg-[#E8690B] rounded flex items-center justify-center">
-        <span class="text-white font-bold text-sm">K</span>
-      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="28" height="32" aria-hidden="true">
+        <defs>
+          <clipPath id="nav-shield-clip">
+            <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z"/>
+          </clipPath>
+        </defs>
+        <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z" fill="white" fill-opacity="0.15"/>
+        <rect x="8" y="4" width="48" height="4" fill="#E8690B"/>
+        <g clip-path="url(#nav-shield-clip)">
+          <rect x="16" y="12" width="9" height="50" rx="2" fill="white"/>
+          <line x1="24" y1="36" x2="52" y2="12" stroke="white" stroke-width="9" stroke-linecap="round"/>
+          <line x1="24" y1="36" x2="50" y2="60" stroke="#E8690B" stroke-width="9" stroke-linecap="round"/>
+        </g>
+      </svg>
       <span class="text-white font-semibold text-lg tracking-tight">ktayl-solution</span>
     </a>
 

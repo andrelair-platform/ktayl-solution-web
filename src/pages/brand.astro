@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const colors = [
+  { name: 'Navy', hex: '#00375A', role: 'Primary brand — headers, backgrounds, icon fills', dark: true },
+  { name: 'Dark Navy', hex: '#00233A', role: 'Deepest context — hero gradients, footer', dark: true },
+  { name: 'Signal Orange', hex: '#E8690B', role: 'Accent — CTAs, lower K arm, highlights', dark: false },
+  { name: 'Warm Gold', hex: '#F5A623', role: 'Hover state of Signal Orange, secondary accent', dark: false },
+  { name: 'Slate 500', hex: '#64748B', role: 'Body text, descriptions', dark: false },
+  { name: 'Slate 100', hex: '#F1F5F9', role: 'Card backgrounds, section fills', dark: false },
+  { name: 'White', hex: '#FFFFFF', role: 'Surfaces, inverted text on dark', dark: false, border: true },
+];
+
+const typeScale = [
+  { label: 'Display', size: '4.5rem / 72px', weight: '700', use: 'Hero H1 only', sample: 'Complex Risks' },
+  { label: 'Heading 1', size: '3rem / 48px', weight: '700', use: 'Section H2', sample: 'Seven Lines of Coverage' },
+  { label: 'Heading 2', size: '1.875rem / 30px', weight: '700', use: 'Card titles, service H2', sample: 'Marine & Aviation' },
+  { label: 'Label', size: '0.75rem / 12px', weight: '700', use: 'Section labels, all-caps', sample: 'INSURANCE LINES' },
+  { label: 'Body Large', size: '1.125rem / 18px', weight: '400', use: 'Lead paragraphs', sample: 'Structured advisory for complex global risks.' },
+  { label: 'Body', size: '0.875rem / 14px', weight: '400', use: 'Card body, descriptions', sample: 'End-to-end supply chain exposure analysis and coverage structuring.' },
+  { label: 'Caption', size: '0.75rem / 12px', weight: '500', use: 'Tags, badges, metadata', sample: 'Shipping & Logistics · Port Operators' },
+];
+---
+
+<Layout title="Brand Identity" description="ktayl-solution visual identity system.">
+  <div class="pt-24 min-h-screen bg-[#F4F7FA]">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+
+      <!-- Header -->
+      <div class="mb-16">
+        <span class="section-label">Internal Reference</span>
+        <h1 class="text-4xl font-bold text-[#00375A] mb-3">Visual Identity System</h1>
+        <p class="text-slate-500 text-lg">ktayl-solution brand guidelines — logo, colour, typography, and usage rules.</p>
+      </div>
+
+      <!-- ── LOGO ── -->
+      <section class="mb-16">
+        <h2 class="text-xl font-bold text-[#00375A] mb-6 pb-3 border-b border-slate-200">Logo</h2>
+        <div class="grid md:grid-cols-2 gap-5">
+
+          <!-- Primary (on white) -->
+          <div class="bg-white rounded-xl border border-slate-100 p-10 flex flex-col items-center gap-4 shadow-sm">
+            <img src="/logo-full.svg" alt="ktayl-solution full logo" class="h-16"/>
+            <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Primary — on white</span>
+          </div>
+
+          <!-- Inverted (on navy) -->
+          <div class="rounded-xl p-10 flex flex-col items-center gap-4 shadow-sm" style="background:#00375A;">
+            <div class="flex items-center gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="36" height="41" aria-hidden="true">
+                <defs><clipPath id="bc-shield"><path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z"/></clipPath></defs>
+                <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z" fill="white" fill-opacity="0.15"/>
+                <rect x="8" y="4" width="48" height="4" fill="#E8690B"/>
+                <g clip-path="url(#bc-shield)">
+                  <rect x="16" y="12" width="9" height="50" rx="2" fill="white"/>
+                  <line x1="24" y1="36" x2="52" y2="12" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                  <line x1="24" y1="36" x2="50" y2="60" stroke="#E8690B" stroke-width="9" stroke-linecap="round"/>
+                </g>
+              </svg>
+              <div>
+                <div class="text-white font-bold text-2xl tracking-tight leading-none">ktayl-solution</div>
+                <div class="text-[#E8690B] text-xs font-semibold tracking-widest mt-1">SPECIALTY INSURANCE CONSULTING</div>
+              </div>
+            </div>
+            <span class="text-xs text-white/40 font-medium uppercase tracking-wider">Inverted — on navy</span>
+          </div>
+
+          <!-- Mark only -->
+          <div class="bg-white rounded-xl border border-slate-100 p-10 flex flex-col items-center gap-4 shadow-sm">
+            <img src="/logo-mark.svg" alt="ktayl-solution shield mark" class="h-20"/>
+            <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Shield mark — standalone</span>
+          </div>
+
+          <!-- Mark on dark -->
+          <div class="rounded-xl p-10 flex flex-col items-center gap-6 shadow-sm" style="background:linear-gradient(135deg,#00233A,#00375A);">
+            <div class="flex items-center gap-6">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="52" height="59" aria-hidden="true">
+                <defs><clipPath id="bc-shield-lg"><path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z"/></clipPath></defs>
+                <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z" fill="white" fill-opacity="0.1"/>
+                <rect x="8" y="4" width="48" height="4" fill="#E8690B"/>
+                <g clip-path="url(#bc-shield-lg)">
+                  <rect x="16" y="12" width="9" height="50" rx="2" fill="white"/>
+                  <line x1="24" y1="36" x2="52" y2="12" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                  <line x1="24" y1="36" x2="50" y2="60" stroke="#E8690B" stroke-width="9" stroke-linecap="round"/>
+                </g>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="36" height="41" aria-hidden="true">
+                <defs><clipPath id="bc-shield-sm"><path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z"/></clipPath></defs>
+                <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z" fill="white" fill-opacity="0.1"/>
+                <rect x="8" y="4" width="48" height="4" fill="#E8690B"/>
+                <g clip-path="url(#bc-shield-sm)">
+                  <rect x="16" y="12" width="9" height="50" rx="2" fill="white"/>
+                  <line x1="24" y1="36" x2="52" y2="12" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                  <line x1="24" y1="36" x2="50" y2="60" stroke="#E8690B" stroke-width="9" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <span class="text-xs text-white/40 font-medium uppercase tracking-wider">Scale comparison — on dark</span>
+          </div>
+        </div>
+
+        <!-- Logo anatomy -->
+        <div class="mt-6 bg-white rounded-xl border border-slate-100 p-8 shadow-sm">
+          <h3 class="text-sm font-semibold text-[#00375A] mb-5">Mark anatomy</h3>
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" width="100" height="113" aria-hidden="true">
+              <defs><clipPath id="bc-anat"><path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z"/></clipPath></defs>
+              <path d="M8 4h48v24c0 17-10 32-24 40C18 60 8 45 8 28V4z" fill="#00375A"/>
+              <rect x="8" y="4" width="48" height="4" fill="#E8690B"/>
+              <g clip-path="url(#bc-anat)">
+                <rect x="16" y="12" width="9" height="50" rx="2" fill="white"/>
+                <line x1="24" y1="36" x2="52" y2="12" stroke="white" stroke-width="9" stroke-linecap="round"/>
+                <line x1="24" y1="36" x2="50" y2="60" stroke="#E8690B" stroke-width="9" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <div class="grid grid-cols-1 gap-3 text-sm flex-1">
+              <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded" style="background:#00375A;"></div>
+                <span class="font-medium text-[#00375A]">Shield form</span>
+                <span class="text-slate-400 text-xs">— Protection, stability, the core promise of insurance</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded bg-white border border-slate-200"></div>
+                <span class="font-medium text-[#00375A]">K vertical bar + upper arm</span>
+                <span class="text-slate-400 text-xs">— Anchored expertise, clarity of advice</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded" style="background:#E8690B;"></div>
+                <span class="font-medium text-[#00375A]">K lower arm (Signal Orange)</span>
+                <span class="text-slate-400 text-xs">— Action, energy, forward momentum</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-16 h-2 rounded" style="background:#E8690B;"></div>
+                <span class="font-medium text-[#00375A]">Orange top bar</span>
+                <span class="text-slate-400 text-xs">— Precision, differentiation, accent rule</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clear space -->
+        <div class="mt-5 bg-white rounded-xl border border-slate-100 p-8 shadow-sm">
+          <h3 class="text-sm font-semibold text-[#00375A] mb-4">Clear space & minimum size</h3>
+          <div class="flex flex-wrap gap-10 items-end">
+            <div class="text-center">
+              <div class="inline-flex p-4 border border-dashed border-[#E8690B]/40 rounded">
+                <img src="/logo-mark.svg" alt="" class="h-14"/>
+              </div>
+              <p class="text-xs text-slate-400 mt-2">Clear space = 1× mark height on all sides</p>
+            </div>
+            <div class="text-sm text-slate-500 leading-relaxed max-w-xs">
+              <p><strong class="text-[#00375A]">Minimum digital size:</strong> 24px height for the mark, 160px width for the full logo.</p>
+              <p class="mt-2"><strong class="text-[#00375A]">Never:</strong> stretch, rotate, recolour, or place on a mid-tone background without sufficient contrast.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── COLOURS ── -->
+      <section class="mb-16">
+        <h2 class="text-xl font-bold text-[#00375A] mb-6 pb-3 border-b border-slate-200">Colour System</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {colors.map(c => (
+            <div class="rounded-xl overflow-hidden shadow-sm border border-slate-100">
+              <div
+                class="h-20"
+                style={`background:${c.hex}; ${c.border ? 'border:1px solid #e2e8f0;' : ''}`}
+              ></div>
+              <div class="bg-white p-3">
+                <div class="font-semibold text-[#00375A] text-sm">{c.name}</div>
+                <div class="text-xs font-mono text-slate-500 mt-0.5">{c.hex}</div>
+                <div class="text-xs text-slate-400 mt-1 leading-snug">{c.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Gradient combos -->
+        <div class="mt-5 grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden shadow-sm border border-slate-100">
+            <div class="h-16" style="background:linear-gradient(135deg,#00233A,#004D7A);"></div>
+            <div class="bg-white p-3">
+              <div class="font-semibold text-[#00375A] text-sm">Hero gradient</div>
+              <div class="text-xs font-mono text-slate-500 mt-0.5">#00233A → #004D7A (135deg)</div>
+              <div class="text-xs text-slate-400 mt-1">Hero sections, CTA bands, dark overlays</div>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-sm border border-slate-100">
+            <div class="h-16" style="background:#F4F7FA;"></div>
+            <div class="bg-white p-3">
+              <div class="font-semibold text-[#00375A] text-sm">Surface tint</div>
+              <div class="text-xs font-mono text-slate-500 mt-0.5">#F4F7FA</div>
+              <div class="text-xs text-slate-400 mt-1">Alternating section backgrounds</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TYPOGRAPHY ── -->
+      <section class="mb-16">
+        <h2 class="text-xl font-bold text-[#00375A] mb-2 pb-3 border-b border-slate-200">Typography</h2>
+        <p class="text-slate-500 text-sm mb-6">Typeface: <strong class="text-[#00375A]">Inter</strong> (Google Fonts). All weights: 400 Regular · 500 Medium · 600 SemiBold · 700 Bold. Letter-spacing on headings: −0.02em.</p>
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+          {typeScale.map((t, i) => (
+            <div class={`px-6 py-5 flex flex-col md:flex-row md:items-center gap-3 ${i < typeScale.length - 1 ? 'border-b border-slate-100' : ''}`}>
+              <div class="w-28 shrink-0">
+                <div class="text-xs font-semibold text-[#E8690B]">{t.label}</div>
+                <div class="text-xs text-slate-400 mt-0.5">{t.size}</div>
+                <div class="text-xs text-slate-400">w{t.weight}</div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div
+                  class="text-[#00375A] truncate"
+                  style={`font-size:clamp(0.75rem, ${t.label === 'Display' ? '2rem' : t.label === 'Heading 1' ? '1.5rem' : t.label === 'Heading 2' ? '1.2rem' : '1rem'}, ${t.size.split(' ')[0]}); font-weight:${t.weight}; letter-spacing:${t.weight === '700' ? '-0.02em' : t.label === 'Label' ? '0.1em' : 'normal'}; text-transform:${t.label === 'Label' ? 'uppercase' : 'none'};`}
+                >{t.sample}</div>
+              </div>
+              <div class="text-xs text-slate-400 shrink-0">{t.use}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ── COMPONENTS ── -->
+      <section class="mb-16">
+        <h2 class="text-xl font-bold text-[#00375A] mb-6 pb-3 border-b border-slate-200">UI Components</h2>
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-8 space-y-8">
+
+          <!-- Buttons -->
+          <div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Buttons</div>
+            <div class="flex flex-wrap gap-3 items-center">
+              <a href="#" class="btn-primary">Primary action</a>
+              <a href="#" class="btn-outline" style="border-color:#00375A; color:#00375A; background:white;">Outline (light bg)</a>
+              <a href="#" class="btn-outline">Outline (dark bg)</a>
+              <a href="#" class="text-xs font-semibold text-[#E8690B] flex items-center gap-1">Text link &#8594;</a>
+            </div>
+          </div>
+
+          <!-- Section label -->
+          <div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Section label</div>
+            <span class="section-label">Insurance Lines</span>
+            <p class="text-xs text-slate-400 mt-1">0.75rem · weight 700 · letter-spacing 0.12em · color Signal Orange</p>
+          </div>
+
+          <!-- Tags -->
+          <div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Sector tags</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-[#00375A] text-white px-3 py-1 rounded-full font-medium">Shipping & Logistics</span>
+              <span class="text-xs bg-[#E8690B]/10 text-[#E8690B] border border-[#E8690B]/20 px-3 py-1 rounded-full font-medium">Marine</span>
+              <span class="text-xs bg-slate-50 text-slate-500 border border-slate-100 rounded-full px-2.5 py-0.5">Port Operators</span>
+            </div>
+          </div>
+
+          <!-- Icon container -->
+          <div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Icon containers</div>
+            <div class="flex gap-3 items-center">
+              <div class="w-12 h-12 rounded-lg bg-[#E8690B]/10 flex items-center justify-center text-[#E8690B]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 12h14"/><path d="M5 12c0 3.87 3.13 7 7 7s7-3.13 7-7"/></svg>
+              </div>
+              <div class="w-12 h-12 rounded-lg bg-[#E8690B] flex items-center justify-center text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 12h14"/><path d="M5 12c0 3.87 3.13 7 7 7s7-3.13 7-7"/></svg>
+              </div>
+              <div class="w-11 h-11 rounded-lg bg-[#00375A]/10 flex items-center justify-center text-[#00375A]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <p class="text-xs text-slate-400">Default · Hover/active · Platform icon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TONE ── -->
+      <section class="mb-16">
+        <h2 class="text-xl font-bold text-[#00375A] mb-6 pb-3 border-b border-slate-200">Brand Voice</h2>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-6">
+            <div class="text-[#E8690B] font-bold text-sm uppercase tracking-wider mb-4">We are</div>
+            <ul class="space-y-3 text-sm text-slate-600">
+              {[
+                ['Precise', 'We say "exposure assessment" not "risk check". Technical vocabulary signals expertise.'],
+                ['Confident', 'We state — not hedge. "We place complex programmes" not "we can help with".'],
+                ['Direct', 'Short sentences. No padding. Clients are professionals — treat them as such.'],
+                ['Global', 'London, Lloyd\'s, Bermuda, Paris. Our language reflects an international market.'],
+              ].map(([t, d]) => (
+                <li>
+                  <div class="font-semibold text-[#00375A]">{t}</div>
+                  <div class="text-xs text-slate-400 mt-0.5 leading-relaxed">{d}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-6">
+            <div class="text-slate-400 font-bold text-sm uppercase tracking-wider mb-4">We are not</div>
+            <ul class="space-y-3 text-sm text-slate-600">
+              {[
+                ['Promotional', 'No superlatives, no empty claims. "Best" and "leading" belong in press releases.'],
+                ['Jargon-heavy', 'Technical when precision demands it — plain when clarity matters more.'],
+                ['Casual', 'No slang, no first-name culture in written copy. Warmth through clarity, not informality.'],
+                ['Passive', 'Active voice only. "We place your programme" — never "your programme will be placed".'],
+              ].map(([t, d]) => (
+                <li>
+                  <div class="font-semibold text-slate-500">{t}</div>
+                  <div class="text-xs text-slate-400 mt-0.5 leading-relaxed">{d}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── DOWNLOADS ── -->
+      <section>
+        <h2 class="text-xl font-bold text-[#00375A] mb-6 pb-3 border-b border-slate-200">Asset Downloads</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          {[
+            { href: '/favicon.svg', label: 'Favicon', desc: 'SVG · 32×32 equivalent · browser tab icon', file: 'favicon.svg' },
+            { href: '/logo-mark.svg', label: 'Shield Mark', desc: 'SVG · 64×72 · standalone symbol', file: 'logo-mark.svg' },
+            { href: '/logo-full.svg', label: 'Full Logo', desc: 'SVG · 320×72 · mark + wordmark + tagline', file: 'logo-full.svg' },
+          ].map(a => (
+            <a href={a.href} download={a.file}
+               class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 hover:border-[#E8690B]/40 hover:shadow-md transition-all group">
+              <div class="text-lg font-bold text-[#00375A] group-hover:text-[#E8690B] transition-colors">{a.label}</div>
+              <div class="text-xs text-slate-400 mt-1 leading-relaxed">{a.desc}</div>
+              <div class="text-xs font-semibold text-[#E8690B] mt-3 flex items-center gap-1">Download SVG &#8595;</div>
+            </a>
+          ))}
+        </div>
+        <p class="text-xs text-slate-400 mt-4">All assets are vector SVG — scale to any size without quality loss. For print use, open in Illustrator or Figma and export to PDF/EPS.</p>
+      </section>
+
+    </div>
+  </div>
+</Layout>
