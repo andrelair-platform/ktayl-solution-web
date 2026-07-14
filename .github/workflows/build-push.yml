@@ -34,7 +34,7 @@ jobs:
 
       # ── Tailscale: join the minicloud tailnet so we can reach Harbor ────────
       - name: Connect to Tailscale
-        uses: tailscale/github-action@v3
+        uses: tailscale/github-action@v4
         with:
           authkey: ${{ secrets.TAILSCALE_AUTH_KEY }}
           version: latest
