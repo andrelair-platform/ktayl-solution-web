@@ -1,0 +1,27 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ktayl-solution-web
+  description: |
+    Public marketing website for ktayl.devandre.sbs — Astro 5 + Tailwind CSS,
+    serving 7 lines of business for an insurance consulting firm.
+    Built as a portfolio demonstration of frontend engineering and CI/CD.
+  annotations:
+    backstage.io/source-location: url:https://github.com/andrelair-platform/ktayl-solution-web
+    github.com/project-slug: andrelair-platform/ktayl-solution-web
+    backstage.io/kubernetes-id: ktayl-solution-web
+  tags:
+    - astro
+    - tailwind
+    - website
+    - frontend
+  links:
+    - url: https://ktayl.devandre.sbs
+      title: ktayl-solution (live site)
+      icon: web
+spec:
+  type: website
+  lifecycle: production
+  owner: group:default/andrelair-platform
+  system: minicloud-platform
