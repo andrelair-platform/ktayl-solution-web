@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+
+  "timezone": "Europe/Paris",
+  "schedule": ["every weekend"],
+  "labels": ["dependencies", "renovate"],
+  "assignees": ["AndreLiar"],
+  "prConcurrentLimit": 3,
+  "commitMessagePrefix": "chore(deps):",
+
+  "enabledManagers": ["dockerfile", "npm"],
+
+  "packageRules": [
+    {
+      "description": "Astro + Tailwind minor/patch — safe to group, CI validates build",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm dependencies",
+      "automerge": false
+    },
+    {
+      "description": "Astro major — breaking changes in SSR API, content collections, etc.",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major", "manual-review-required"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Dockerfile base images (node:22-alpine, nginx-unprivileged)",
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "base images",
+      "automerge": false
+    },
+    {
+      "description": "Node or nginx major — verify build output and nginx config compatibility",
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major", "manual-review-required"],
+      "dependencyDashboardApproval": true
+    }
+  ]
+}
