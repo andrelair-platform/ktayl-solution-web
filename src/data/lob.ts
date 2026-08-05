@@ -13,112 +13,149 @@ export interface LOB {
   sectors: string[];
 }
 
+export interface HDIService {
+  id: string;
+  icon: string;
+  name: string;
+  description: string;
+}
+
 const svgAttrs = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"`;
 
 export const lobs: LOB[] = [
   {
-    id: 'marine',
-    icon: `<svg ${svgAttrs}><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 12h14"/><path d="M5 12c0 3.87 3.13 7 7 7s7-3.13 7-7"/></svg>`,
-    name: 'Marine',
-    tagline: 'Cargo, Hull & Marine Liability',
+    id: 'propriete-infrastructures',
+    icon: `<svg ${svgAttrs}><path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>`,
+    name: 'Propriété & Infrastructures',
+    tagline: 'Dommages, Responsabilité Civile, Cyber, Flottes',
     description:
-      'Comprehensive risk solutions for ocean cargo, vessel hull, ports and terminals, and all forms of marine liability. We advise on coverage structure for complex international trade flows.',
+      "Solutions d'assurance pour les entreprises industrielles et commerciales, des groupes du CAC 40 aux ETI. HDI Global propose des couvertures sur mesure pour vos biens, vos responsabilités, vos risques cyber et vos flottes automobiles, en France et à l'international.",
     services: [
-      { title: 'Cargo Risk Assessment', description: 'End-to-end supply chain exposure analysis and optimal coverage structuring for high-value or temperature-sensitive cargo.' },
-      { title: 'Hull & Machinery Placement', description: 'Bespoke hull insurance placement for commercial fleets, specialist vessels and yacht portfolios.' },
-      { title: 'Marine Liability Advisory', description: 'P&I club selection guidance, charterers liability, and terminal operator coverage review.' },
-      { title: 'Claims Management', description: 'Average adjusting coordination, salvage negotiation, and dispute resolution support.' },
+      { title: 'Dommages aux Biens', description: "Couverture des dommages matériels et pertes d'exploitation pour les installations industrielles et commerciales, de la PME au grand groupe." },
+      { title: 'Responsabilité Civile', description: "Protection contre les préjudices causés à des tiers dans le cadre de l'activité professionnelle, des produits ou de l'exploitation." },
+      { title: 'Cyber', description: "Solutions de protection contre les cyberattaques, violations de données, rançongiciels et interruptions d'activité informatique." },
+      { title: 'Flottes Automobiles', description: "Gestion et couverture globale des flottes de véhicules d'entreprise, adaptée à chaque taille de parc et secteur d'activité." },
     ],
-    sectors: ['Shipping & Logistics', 'Port Operators', 'Commodity Traders', 'Shipbuilders'],
+    sectors: ['Industrie', 'Commerce & Distribution', 'Services', 'PME-ETI'],
   },
   {
-    id: 'aviation',
-    icon: `<svg ${svgAttrs}><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
-    name: 'Aviation',
-    tagline: 'Aircraft Hull, Liability & Passenger Risk',
+    id: 'transport',
+    icon: `<svg ${svgAttrs}><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    name: 'Transport',
+    tagline: 'Marchandises transportées & programmes internationaux',
     description:
-      'Specialised advisory for airlines, charter operators, MRO facilities, and general aviation. We navigate international aviation and specialty markets to place complex risks.',
+      "L'assurance des marchandises transportées offre aux entreprises une maîtrise indispensable de leurs opérations commerciales en accompagnant leurs biens dans le monde entier, jusqu'à leur parfaite livraison. Que ce soit par voie terrestre ou maritime, HDI Global garantit vos marchandises en France et via un réseau présent dans plus de 175 pays.",
     services: [
-      { title: 'Hull & Spares Coverage', description: 'Aircraft hull all-risk, agreed value, ground risk, and spares/spare engines placement.' },
-      { title: 'Airline Liability', description: 'Third-party, passenger bodily injury, cargo and baggage liability structure under Montreal Convention.' },
-      { title: 'MRO & Products Liability', description: 'Maintenance, repair and overhaul operators liability, aviation products, grounding and recall.' },
-      { title: 'Airport & Premises', description: 'Airport operators liability, hangarkeepers, fuelling, and ground handling exposure.' },
+      { title: 'Transport Terrestre', description: "Couverture des marchandises acheminées par route, rail et transport express, en France et à l'export." },
+      { title: 'Transport Maritime', description: "Assurance corps et facultés maritimes pour vos expéditions par voie de mer, incluant la couverture multimodale." },
+      { title: 'Programmes Internationaux', description: "Structuration de programmes d'assurance coordonnés pour les entreprises présentes dans plusieurs pays." },
+      { title: 'Valeur à Risque', description: "Analyse et optimisation de la valeur assurée de vos stocks et flux de marchandises en transit." },
     ],
-    sectors: ['Airlines', 'Charter & Private', 'MRO Facilities', 'Airports & Ground Handlers'],
+    sectors: ['Négoce international', 'Logistique', 'Import / Export', 'Grands groupes industriels'],
   },
   {
-    id: 'property-engineering',
-    icon: `<svg ${svgAttrs}><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg>`,
-    name: 'Property & Engineering',
-    tagline: 'Industrial All Risk, Construction & Machinery',
+    id: 'construction-projets',
+    icon: `<svg ${svgAttrs}><path d="M2 20h20"/><path d="M4 20v-6a2 2 0 0 1 2-2h2V8"/><path d="M8 20V8l4-4 4 4v12"/><path d="M16 20v-6a2 2 0 0 1 2-2h2"/><path d="M12 4v4"/></svg>`,
+    name: 'Construction & Projets',
+    tagline: 'Risques techniques, montage et ingénierie',
     description:
-      'Risk engineering and insurance placement for complex industrial property and large-scale construction projects. We combine on-site risk assessment with market-leading placement capacity.',
+      "En France comme à l'international, HDI Global accompagne les entreprises tout au long de leurs projets. Nous garantissons les phases de construction, de montage, d'essais et de mise en service, ainsi que des garanties en exploitation pour équipements spécifiques : énergie renouvelable, process industriels, engins de chantier.",
     services: [
-      { title: 'Industrial All Risk', description: 'Material damage and business interruption coverage for manufacturing, warehousing, and process industries.' },
-      { title: 'Construction All Risk', description: 'CAR/EAR programme structuring for infrastructure, civil engineering, and real estate development.' },
-      { title: 'Machinery Breakdown', description: 'Coverage for mechanical and electrical breakdown with first-loss and business interruption extensions.' },
-      { title: 'Risk Engineering Surveys', description: 'Pre-placement site surveys, loss prevention recommendations, and cresta zone accumulation analysis.' },
+      { title: 'Tous Risques Chantier', description: "Couverture des travaux de bâtiment et génie civil contre les dommages accidentels, malfaçons et responsabilités constructeur." },
+      { title: 'Tous Risques Montage', description: "Assurance des opérations d'installation, d'assemblage et de mise en service d'équipements industriels et techniques." },
+      { title: 'Bris de Machine', description: "Protection contre les dommages accidentels aux machines et équipements de production en phase d'exploitation." },
+      { title: 'Risques Techniques Spéciaux', description: "Solutions sur mesure pour la production d'énergie renouvelable, process industriels et matériel électronique de haute valeur." },
     ],
-    sectors: ['Manufacturing', 'Real Estate', 'Infrastructure', 'Energy Utilities'],
+    sectors: ['BTP', 'Énergie renouvelable', 'Process industriels', 'Immobilier & infrastructure'],
   },
   {
-    id: 'liability',
-    icon: `<svg ${svgAttrs}><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>`,
-    name: 'Liability',
-    tagline: "General, Products & Employer's Liability",
+    id: 'managers-directeurs',
+    icon: `<svg ${svgAttrs}><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="14" x2="22" y2="14"/></svg>`,
+    name: 'Managers & Directeurs',
+    tagline: 'Responsabilité Civile des Dirigeants (RCMS)',
     description:
-      "Broad liability consulting spanning commercial general liability, products recall, employer's liability and professional indemnity. We design programmes that match exposure across jurisdictions.",
+      "Le contrat RCMS couvre l'ensemble des dirigeants de droit ou de fait dans le cadre de fautes professionnelles commises dans l'exercice de leur fonction. HDI Global propose des solutions complètes de protection des mandataires sociaux et des décideurs face aux risques juridiques croissants.",
     services: [
-      { title: 'General Liability Audit', description: 'Exposure review across premises, operations, products completed and contractual liability under civil law frameworks.' },
-      { title: 'Products Recall Advisory', description: 'First-party recall cost, rehabilitation, extortion and contamination cover structuring for FMCG and pharma.' },
-      { title: "Employer's Liability", description: 'Statutory and excess EL placement for multinationals with complex cross-border workforce exposures.' },
-      { title: 'Professional Indemnity', description: 'PI coverage for consultancies, engineers, IT service providers, and regulated professionals.' },
+      { title: 'RC Mandataires Sociaux (RCMS)', description: "Couverture des dirigeants contre les réclamations de tiers pour fautes de gestion commises dans l'exercice de leur mandat." },
+      { title: 'RC Professionnelle', description: "Protection contre les fautes, erreurs et omissions dans le cadre de l'exercice des responsabilités professionnelles." },
+      { title: 'Lignes Financières', description: "Solutions globales incluant RCMS, garanties fraude, RC professionnelle et protection du bilan face aux risques financiers." },
+      { title: 'Protection Juridique', description: "Accompagnement et prise en charge des frais de défense judiciaire pour les dirigeants et décideurs de l'entreprise." },
     ],
-    sectors: ['Consumer Goods', 'Pharma & Life Sciences', 'Professional Services', 'Multinationals'],
+    sectors: ['PME-ETI', 'Grands groupes', 'Start-ups & scale-ups', 'Institutions financières'],
   },
   {
-    id: 'financial-lines',
-    icon: `<svg ${svgAttrs}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
-    name: 'Financial Lines',
-    tagline: 'D&O, E&O, Crime & Management Liability',
+    id: 'collaborateurs',
+    icon: `<svg ${svgAttrs}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    name: 'Pour vos Collaborateurs',
+    tagline: 'Protection & Sûreté des Personnes',
     description:
-      'Structured advisory for the financial risks of directors, officers, and the entities they manage. We place and negotiate financial lines programmes in London, European, and Bermuda markets.',
+      "L'assurance collective contre les accidents de HDI Global garantit aux employés une couverture d'assurance complète. Nous proposons des solutions de protection et de sûreté pour vos collaborateurs en France comme lors de leurs déplacements professionnels à l'étranger.",
     services: [
-      { title: 'D&O Programme Design', description: 'Directors & Officers Side-A/B/C structuring, entity coverage extensions, and securities exclusion analysis.' },
-      { title: 'E&O / Tech E&O', description: 'Errors & Omissions for financial institutions, technology companies, and regulated intermediaries.' },
-      { title: 'Crime & Fidelity', description: 'Employee dishonesty, computer fraud, funds transfer fraud, and social engineering coverage.' },
-      { title: 'M&A Representations & Warranties', description: 'R&W insurance for private equity transactions, SPACs, and corporate M&A deals.' },
+      { title: 'Accidents Collectifs', description: "Couverture des accidents survenus dans le cadre professionnel, au-delà des obligations légales, pour l'ensemble du personnel." },
+      { title: "Assurance Voyage d'Affaires", description: "Protection complète de vos collaborateurs lors de leurs déplacements professionnels en France et à l'étranger." },
+      { title: 'Assistance & Rapatriement', description: "Services d'assistance médicale, d'évacuation sanitaire et de rapatriement pour le personnel expatrié ou en mission." },
+      { title: 'Sûreté des Personnes', description: "Solutions de protection et de gestion de crise pour les collaborateurs exposés à des risques sécuritaires dans des zones sensibles." },
     ],
-    sectors: ['Financial Institutions', 'Private Equity', 'Technology Companies', 'Listed Corporates'],
+    sectors: ['Grands groupes', 'PME & ETI', 'Organisations internationales', 'Secteur public'],
   },
   {
-    id: 'energy',
-    icon: `<svg ${svgAttrs}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-    name: 'Energy',
-    tagline: 'Offshore, Onshore & Renewable Energy',
+    id: 'demandes-specifiques',
+    icon: `<svg ${svgAttrs}><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>`,
+    name: 'Demandes Spécifiques',
+    tagline: 'Recherches biomédicales & risques environnementaux',
     description:
-      "Dedicated energy practice covering upstream oil & gas, power generation, renewables, and downstream petrochemical complexes. We work with Lloyd's syndicates and specialist international energy markets.",
+      "Afin de pouvoir commercialiser de nouveaux médicaments ou dispositifs médicaux, les laboratoires et industriels procèdent à des essais cliniques pour lesquels il existe une obligation légale d'assurance. HDI Global propose également des solutions couvrant les risques environnementaux et toute demande sectorielle nécessitant une couverture sur mesure.",
     services: [
-      { title: 'Offshore Energy', description: 'Drilling rigs, FPSOs, jack-ups, and pipelines: physical damage and OEE programme structuring.' },
-      { title: 'Onshore Energy', description: 'Refinery, storage, and transmission risk — combined property and business interruption for process plants.' },
-      { title: 'Renewable Energy', description: 'Wind farm, solar PV, hydroelectric, and battery storage all-risk and revenue protection coverage.' },
-      { title: 'Liability & Control of Well', description: 'OPL, pollution liability, operators extra expense, and well control coverage.' },
+      { title: 'Essais Cliniques & Biomédicaux', description: "Assurance obligatoire pour les essais et recherches biomédicaux, en conformité avec les exigences réglementaires françaises et européennes." },
+      { title: 'Responsabilité Environnementale', description: "Couverture des dommages environnementaux accidentels et des coûts de dépollution en application de la directive européenne." },
+      { title: 'Éco-risques', description: "Solutions adaptées aux risques d'atteinte à l'environnement liés à l'activité industrielle : sols, eaux souterraines, faune et flore." },
+      { title: 'Solutions Sectorielles Sur Mesure', description: "Ingénierie d'assurance pour tout risque ne trouvant pas de réponse dans les gammes standard du marché." },
     ],
-    sectors: ['Oil & Gas', 'Power Utilities', 'Renewable Developers', 'Petrochemicals'],
+    sectors: ['Laboratoires & Pharma', 'Industrie chimique', 'Secteur public', 'R&D & Biotechs'],
+  },
+];
+
+export const hdiServices: HDIService[] = [
+  {
+    id: 'production',
+    icon: `<svg ${svgAttrs}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+    name: 'Production',
+    description:
+      "Pour répondre efficacement à ses clients, HDI Global a mis en place une organisation spécifique basée sur la qualité de la souscription, la réactivité des équipes dédiées et la capacité à proposer des solutions innovantes sur mesure.",
   },
   {
-    id: 'cyber',
+    id: 'prevention',
     icon: `<svg ${svgAttrs}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
-    name: 'Cyber',
-    tagline: 'Cyber Risk, Data Breach & Business Interruption',
+    name: 'Prévention',
     description:
-      'End-to-end cyber risk advisory from pre-placement controls assessment to incident response coordination. We place standalone cyber programmes and help clients quantify silent cyber exposure in traditional lines.',
-    services: [
-      { title: 'Cyber Risk Assessment', description: 'Technical controls review, threat landscape analysis, and coverage gap identification across existing policies.' },
-      { title: 'Standalone Cyber Placement', description: 'First-party (ransomware, BI, restoration) and third-party (liability, regulatory) cyber programme placement.' },
-      { title: 'Silent Cyber Audit', description: 'Identification and remediation of unintended cyber exposure in property, liability, and marine policies.' },
-      { title: 'Incident Response Coordination', description: 'Insurer notification, forensic vendor management, ransom negotiation, and business continuity support.' },
-    ],
-    sectors: ['Technology', 'Healthcare', 'Financial Services', 'Critical Infrastructure'],
+      "180 ingénieurs experts conçoivent avec nos clients les solutions de prévention et de protection les plus adaptées à leurs risques. Notre approche préventive réduit significativement la sinistralité et protège durablement l'activité.",
+  },
+  {
+    id: 'international',
+    icon: `<svg ${svgAttrs}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    name: 'Réseau International',
+    description:
+      "Pour accompagner ses clients présents à l'étranger, HDI met en place des programmes internationaux pouvant intégrer des polices locales émises dans plus de 130 pays, avec un service local adapté à chaque marché.",
+  },
+  {
+    id: 'indemnisation',
+    icon: `<svg ${svgAttrs}><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>`,
+    name: 'Indemnisation',
+    description:
+      "La survenance d'un sinistre peut s'avérer lourde de conséquences. HDI propose un véritable partenariat dans la gestion des sinistres, avec des experts dédiés qui accompagnent chaque client tout au long du processus d'indemnisation.",
+  },
+  {
+    id: 'courtiers',
+    icon: `<svg ${svgAttrs}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11v6"/><path d="M20 8h6"/></svg>`,
+    name: 'Pour les Courtiers',
+    description:
+      "HDI Global SE travaille à travers le courtage, dans une véritable relation partenaire basée sur la qualité et l'accompagnement sur le long terme. Outils dédiés, expertises métier et appui technique pour valoriser les clients des courtiers.",
+  },
+  {
+    id: 'financement-risques',
+    icon: `<svg ${svgAttrs}><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    name: 'Financement des Risques',
+    description:
+      "Les solutions de financement de risques — ART, captives et alternatives — permettent de répondre aux besoins spécifiques de protection de bilan de chaque entreprise, en complément des programmes d'assurance traditionnels.",
   },
 ];
