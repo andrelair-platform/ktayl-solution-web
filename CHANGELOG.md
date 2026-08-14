@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/andrelair-platform/ktayl-solution-web/compare/ktayl-solution-web-v0.1.1...ktayl-solution-web-v0.1.2) (2026-08-14)
+
+
+### Features
+
+* **ci:** migrate to GitHub Pages, decommission cluster deployment ([e54b9c0](https://github.com/andrelair-platform/ktayl-solution-web/commit/e54b9c05c7d28dcf2c33572578381619ea874fd7))
+
 ## [0.1.1](https://github.com/andrelair-platform/ktayl-solution-web/compare/ktayl-solution-web-v0.1.0...ktayl-solution-web-v0.1.1) (2026-08-14)
 
 
