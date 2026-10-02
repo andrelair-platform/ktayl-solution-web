@@ -20,6 +20,13 @@ export interface HDIService {
   description: string;
 }
 
+export interface EmergingRisk {
+  id: string;
+  icon: string;
+  name: string;
+  description: string;
+}
+
 const svgAttrs = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"`;
 
 export const lobs: LOB[] = [
@@ -113,6 +120,51 @@ export const lobs: LOB[] = [
     ],
     sectors: ['Laboratoires & Pharma', 'Industrie chimique', 'Secteur public', 'R&D & Biotechs'],
   },
+  {
+    id: 'credit-risques-politiques',
+    icon: `<svg ${svgAttrs}><path d="M2 20h20"/><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/><circle cx="12" cy="9" r="1.3"/></svg>`,
+    name: 'Crédit & Risques Politiques',
+    tagline: 'Impayés, confiscation, violence politique',
+    description:
+      "Les entreprises exportatrices et les groupes présents sur des marchés émergents sont exposés au risque d'impayé de leurs clients et à l'instabilité des pays où ils opèrent. HDI Global protège votre bilan contre le défaut de paiement, la confiscation d'actifs à l'étranger et les événements de violence politique affectant vos opérations.",
+    services: [
+      { title: 'Assurance-Crédit', description: "Couverture du risque d'impayé sur vos créances commerciales, en France comme à l'export, pour sécuriser votre poste clients." },
+      { title: 'Risques Politiques', description: "Protection contre l'expropriation, la confiscation, la nationalisation et les restrictions de transfert de devises sur vos actifs à l'étranger." },
+      { title: 'Violence Politique & Terrorisme', description: "Garantie des dommages aux biens causés par le terrorisme, les émeutes, les mouvements populaires et la guerre sur vos sites." },
+      { title: 'Non-paiement Souverain', description: "Couverture du défaut de contreparties publiques et para-publiques dans le cadre de contrats et projets internationaux." },
+    ],
+    sectors: ['Négoce international', 'Exportateurs', 'BTP & infrastructure', 'Énergie & mines'],
+  },
+  {
+    id: 'aviation',
+    icon: `<svg ${svgAttrs}><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>`,
+    name: 'Aviation',
+    tagline: 'Corps, RC aérienne & activités aéroportuaires',
+    description:
+      "Le secteur aéronautique exige une expertise d'assurance pointue et une capacité adaptée à des valeurs assurées élevées. HDI Global accompagne les compagnies, les gestionnaires d'aéroports, les constructeurs et les acteurs de l'aviation générale sur l'ensemble de leurs risques, en France et à l'international.",
+    services: [
+      { title: 'Corps Aériens', description: "Assurance des aéronefs contre les dommages matériels et la perte totale, de l'aviation générale aux flottes commerciales." },
+      { title: 'Responsabilité Civile Aérienne', description: "Couverture de la responsabilité vis-à-vis des passagers, des tiers et des marchandises transportées par voie aérienne." },
+      { title: 'Risques Aéroportuaires', description: "Protection des gestionnaires d'aéroports et prestataires d'assistance en escale contre les responsabilités liées à l'exploitation." },
+      { title: 'Produits Aéronautiques', description: "RC produits pour les constructeurs, équipementiers et fournisseurs de pièces et services de la chaîne aéronautique." },
+    ],
+    sectors: ['Compagnies aériennes', 'Aéroports', 'Constructeurs & équipementiers', 'Aviation générale'],
+  },
+  {
+    id: 'energie',
+    icon: `<svg ${svgAttrs}><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>`,
+    name: 'Énergie',
+    tagline: 'Pétrole, gaz, production électrique & renouvelables',
+    description:
+      "La production et la distribution d'énergie concentrent des capitaux considérables et des risques techniques majeurs. HDI Global couvre l'ensemble de la chaîne énergétique — de l'amont pétrolier et gazier aux centrales de production, jusqu'aux infrastructures renouvelables — avec une ingénierie de risque dédiée et une capacité internationale.",
+    services: [
+      { title: 'Énergie Onshore & Offshore', description: "Couverture des installations d'exploration, de production et de raffinage pétrolières et gazières, à terre comme en mer." },
+      { title: 'Production Électrique', description: "Assurance dommages et pertes d'exploitation des centrales thermiques, hydrauliques et de cogénération." },
+      { title: 'Énergies Renouvelables', description: "Solutions pour les parcs éoliens, solaires, hydroélectriques et de stockage, de la construction à l'exploitation." },
+      { title: 'RC & Pollution Énergie', description: "Responsabilité civile et atteintes à l'environnement spécifiques aux activités énergétiques à fort enjeu." },
+    ],
+    sectors: ['Pétrole & gaz', 'Utilities & production', 'Énergies renouvelables', 'Transition énergétique'],
+  },
 ];
 
 export const hdiServices: HDIService[] = [
@@ -157,5 +209,51 @@ export const hdiServices: HDIService[] = [
     name: 'Financement des Risques',
     description:
       "Les solutions de financement de risques — ART, captives et alternatives — permettent de répondre aux besoins spécifiques de protection de bilan de chaque entreprise, en complément des programmes d'assurance traditionnels.",
+  },
+];
+
+// §34 — the major risks reshaping industrial insurance (client-facing: the risk + how we cover it)
+export const emergingRisks: EmergingRisk[] = [
+  {
+    id: 'climat-catnat',
+    icon: `<svg ${svgAttrs}><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/></svg>`,
+    name: 'Climat & Catastrophes Naturelles',
+    description:
+      "Inondations, tempêtes, sécheresses et incendies s'intensifient et frappent des sites toujours plus exposés. Nous modélisons votre exposition CAT et structurons des capacités adaptées, jusqu'aux couvertures paramétriques.",
+  },
+  {
+    id: 'cyber-industriel',
+    icon: `<svg ${svgAttrs}><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+    name: 'Cyber Industriel (IT / OT)',
+    description:
+      "La convergence des systèmes informatiques (IT), industriels (OT) et connectés transforme un incident cyber en véritable interruption d'activité. Nous couvrons le risque cyber et ses conséquences d'exploitation sur vos chaînes de production.",
+  },
+  {
+    id: 'supply-chain',
+    icon: `<svg ${svgAttrs}><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    name: 'Supply Chain & Carence Fournisseur',
+    description:
+      "La défaillance d'un seul fournisseur peut arrêter plusieurs usines et propager une interruption mondiale. Nos garanties de pertes d'exploitation sans dommage (CBI) et l'analyse de vos dépendances sécurisent votre chaîne d'approvisionnement.",
+  },
+  {
+    id: 'geopolitique',
+    icon: `<svg ${svgAttrs}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    name: 'Risques Géopolitiques',
+    description:
+      "Sanctions, conflits, terrorisme, expropriation et restrictions commerciales fragilisent les opérations internationales. Nos solutions Crédit & Risques Politiques protègent vos actifs et vos flux sur les marchés sensibles.",
+  },
+  {
+    id: 'transition-energetique',
+    icon: `<svg ${svgAttrs}><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
+    name: 'Transition Énergétique',
+    description:
+      "Nouveaux actifs — renouvelables, hydrogène, batteries — et nouvelles responsabilités accompagnent la décarbonation. Nous assurons ces technologies émergentes, de la construction à l'exploitation, avec une ingénierie de risque dédiée.",
+  },
+  {
+    id: 'intelligence-artificielle',
+    icon: `<svg ${svgAttrs}><path d="M12 5a3 3 0 1 0-5.997.142 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.142 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg>`,
+    name: 'Intelligence Artificielle',
+    description:
+      "L'IA crée de nouvelles expositions : décision automatisée, responsabilité algorithmique et dépendance aux modèles. Nous aidons à cadrer et transférer ces risques émergents au fur et à mesure de leur adoption industrielle.",
   },
 ];
