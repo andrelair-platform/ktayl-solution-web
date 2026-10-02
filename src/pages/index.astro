@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { lobs, hdiServices, emergingRisks } from '../data/lob';
+import { lobs, ktaylServices, emergingRisks } from '../data/lob';
 
 const values = [
   {
@@ -137,7 +137,7 @@ const values = [
     </div>
   </section>
 
-  <!-- SERVICES HDI -->
+  <!-- SERVICES -->
   <section id="services" class="py-24" style="background:#F4F7FA;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-14 max-w-2xl">
@@ -148,7 +148,7 @@ const values = [
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hdiServices.map(svc => (
+        {ktaylServices.map(svc => (
           <a href={`/services#${svc.id}`}
              class="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-[#E8690B]/40 transition-all duration-200 p-6 flex flex-col gap-4">
             <div class="w-12 h-12 rounded-lg bg-[#00375A]/10 flex items-center justify-center text-[#00375A] group-hover:bg-[#00375A] group-hover:text-white transition-all duration-200 shrink-0">

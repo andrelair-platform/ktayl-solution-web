@@ -13,7 +13,7 @@ export interface LOB {
   sectors: string[];
 }
 
-export interface HDIService {
+export interface KtaylService {
   id: string;
   icon: string;
   name: string;
@@ -36,7 +36,7 @@ export const lobs: LOB[] = [
     name: 'Propriété & Infrastructures',
     tagline: 'Dommages, Responsabilité Civile, Cyber, Flottes',
     description:
-      "Solutions d'assurance pour les entreprises industrielles et commerciales, des groupes du CAC 40 aux ETI. HDI Global propose des couvertures sur mesure pour vos biens, vos responsabilités, vos risques cyber et vos flottes automobiles, en France et à l'international.",
+      "Solutions d'assurance pour les entreprises industrielles et commerciales, des groupes du CAC 40 aux ETI. ktayl-solution propose des couvertures sur mesure pour vos biens, vos responsabilités, vos risques cyber et vos flottes automobiles, en France et à l'international.",
     services: [
       { title: 'Dommages aux Biens', description: "Couverture des dommages matériels et pertes d'exploitation pour les installations industrielles et commerciales, de la PME au grand groupe." },
       { title: 'Responsabilité Civile', description: "Protection contre les préjudices causés à des tiers dans le cadre de l'activité professionnelle, des produits ou de l'exploitation." },
@@ -51,7 +51,7 @@ export const lobs: LOB[] = [
     name: 'Transport',
     tagline: 'Marchandises transportées & programmes internationaux',
     description:
-      "L'assurance des marchandises transportées offre aux entreprises une maîtrise indispensable de leurs opérations commerciales en accompagnant leurs biens dans le monde entier, jusqu'à leur parfaite livraison. Que ce soit par voie terrestre ou maritime, HDI Global garantit vos marchandises en France et via un réseau présent dans plus de 175 pays.",
+      "L'assurance des marchandises transportées offre aux entreprises une maîtrise indispensable de leurs opérations commerciales en accompagnant leurs biens dans le monde entier, jusqu'à leur parfaite livraison. Que ce soit par voie terrestre ou maritime, ktayl-solution garantit vos marchandises en France et via un réseau présent dans plus de 175 pays.",
     services: [
       { title: 'Transport Terrestre', description: "Couverture des marchandises acheminées par route, rail et transport express, en France et à l'export." },
       { title: 'Transport Maritime', description: "Assurance corps et facultés maritimes pour vos expéditions par voie de mer, incluant la couverture multimodale." },
@@ -66,7 +66,7 @@ export const lobs: LOB[] = [
     name: 'Construction & Projets',
     tagline: 'Risques techniques, montage et ingénierie',
     description:
-      "En France comme à l'international, HDI Global accompagne les entreprises tout au long de leurs projets. Nous garantissons les phases de construction, de montage, d'essais et de mise en service, ainsi que des garanties en exploitation pour équipements spécifiques : énergie renouvelable, process industriels, engins de chantier.",
+      "En France comme à l'international, ktayl-solution accompagne les entreprises tout au long de leurs projets. Nous garantissons les phases de construction, de montage, d'essais et de mise en service, ainsi que des garanties en exploitation pour équipements spécifiques : énergie renouvelable, process industriels, engins de chantier.",
     services: [
       { title: 'Tous Risques Chantier', description: "Couverture des travaux de bâtiment et génie civil contre les dommages accidentels, malfaçons et responsabilités constructeur." },
       { title: 'Tous Risques Montage', description: "Assurance des opérations d'installation, d'assemblage et de mise en service d'équipements industriels et techniques." },
@@ -81,7 +81,7 @@ export const lobs: LOB[] = [
     name: 'Managers & Directeurs',
     tagline: 'Responsabilité Civile des Dirigeants (RCMS)',
     description:
-      "Le contrat RCMS couvre l'ensemble des dirigeants de droit ou de fait dans le cadre de fautes professionnelles commises dans l'exercice de leur fonction. HDI Global propose des solutions complètes de protection des mandataires sociaux et des décideurs face aux risques juridiques croissants.",
+      "Le contrat RCMS couvre l'ensemble des dirigeants de droit ou de fait dans le cadre de fautes professionnelles commises dans l'exercice de leur fonction. ktayl-solution propose des solutions complètes de protection des mandataires sociaux et des décideurs face aux risques juridiques croissants.",
     services: [
       { title: 'RC Mandataires Sociaux (RCMS)', description: "Couverture des dirigeants contre les réclamations de tiers pour fautes de gestion commises dans l'exercice de leur mandat." },
       { title: 'RC Professionnelle', description: "Protection contre les fautes, erreurs et omissions dans le cadre de l'exercice des responsabilités professionnelles." },
@@ -96,7 +96,7 @@ export const lobs: LOB[] = [
     name: 'Pour vos Collaborateurs',
     tagline: 'Protection & Sûreté des Personnes',
     description:
-      "L'assurance collective contre les accidents de HDI Global garantit aux employés une couverture d'assurance complète. Nous proposons des solutions de protection et de sûreté pour vos collaborateurs en France comme lors de leurs déplacements professionnels à l'étranger.",
+      "L'assurance collective contre les accidents de ktayl-solution garantit aux employés une couverture d'assurance complète. Nous proposons des solutions de protection et de sûreté pour vos collaborateurs en France comme lors de leurs déplacements professionnels à l'étranger.",
     services: [
       { title: 'Accidents Collectifs', description: "Couverture des accidents survenus dans le cadre professionnel, au-delà des obligations légales, pour l'ensemble du personnel." },
       { title: "Assurance Voyage d'Affaires", description: "Protection complète de vos collaborateurs lors de leurs déplacements professionnels en France et à l'étranger." },
@@ -111,7 +111,7 @@ export const lobs: LOB[] = [
     name: 'Demandes Spécifiques',
     tagline: 'Recherches biomédicales & risques environnementaux',
     description:
-      "Afin de pouvoir commercialiser de nouveaux médicaments ou dispositifs médicaux, les laboratoires et industriels procèdent à des essais cliniques pour lesquels il existe une obligation légale d'assurance. HDI Global propose également des solutions couvrant les risques environnementaux et toute demande sectorielle nécessitant une couverture sur mesure.",
+      "Afin de pouvoir commercialiser de nouveaux médicaments ou dispositifs médicaux, les laboratoires et industriels procèdent à des essais cliniques pour lesquels il existe une obligation légale d'assurance. ktayl-solution propose également des solutions couvrant les risques environnementaux et toute demande sectorielle nécessitant une couverture sur mesure.",
     services: [
       { title: 'Essais Cliniques & Biomédicaux', description: "Assurance obligatoire pour les essais et recherches biomédicaux, en conformité avec les exigences réglementaires françaises et européennes." },
       { title: 'Responsabilité Environnementale', description: "Couverture des dommages environnementaux accidentels et des coûts de dépollution en application de la directive européenne." },
@@ -126,7 +126,7 @@ export const lobs: LOB[] = [
     name: 'Crédit & Risques Politiques',
     tagline: 'Impayés, confiscation, violence politique',
     description:
-      "Les entreprises exportatrices et les groupes présents sur des marchés émergents sont exposés au risque d'impayé de leurs clients et à l'instabilité des pays où ils opèrent. HDI Global protège votre bilan contre le défaut de paiement, la confiscation d'actifs à l'étranger et les événements de violence politique affectant vos opérations.",
+      "Les entreprises exportatrices et les groupes présents sur des marchés émergents sont exposés au risque d'impayé de leurs clients et à l'instabilité des pays où ils opèrent. ktayl-solution protège votre bilan contre le défaut de paiement, la confiscation d'actifs à l'étranger et les événements de violence politique affectant vos opérations.",
     services: [
       { title: 'Assurance-Crédit', description: "Couverture du risque d'impayé sur vos créances commerciales, en France comme à l'export, pour sécuriser votre poste clients." },
       { title: 'Risques Politiques', description: "Protection contre l'expropriation, la confiscation, la nationalisation et les restrictions de transfert de devises sur vos actifs à l'étranger." },
@@ -141,7 +141,7 @@ export const lobs: LOB[] = [
     name: 'Aviation',
     tagline: 'Corps, RC aérienne & activités aéroportuaires',
     description:
-      "Le secteur aéronautique exige une expertise d'assurance pointue et une capacité adaptée à des valeurs assurées élevées. HDI Global accompagne les compagnies, les gestionnaires d'aéroports, les constructeurs et les acteurs de l'aviation générale sur l'ensemble de leurs risques, en France et à l'international.",
+      "Le secteur aéronautique exige une expertise d'assurance pointue et une capacité adaptée à des valeurs assurées élevées. ktayl-solution accompagne les compagnies, les gestionnaires d'aéroports, les constructeurs et les acteurs de l'aviation générale sur l'ensemble de leurs risques, en France et à l'international.",
     services: [
       { title: 'Corps Aériens', description: "Assurance des aéronefs contre les dommages matériels et la perte totale, de l'aviation générale aux flottes commerciales." },
       { title: 'Responsabilité Civile Aérienne', description: "Couverture de la responsabilité vis-à-vis des passagers, des tiers et des marchandises transportées par voie aérienne." },
@@ -156,7 +156,7 @@ export const lobs: LOB[] = [
     name: 'Énergie',
     tagline: 'Pétrole, gaz, production électrique & renouvelables',
     description:
-      "La production et la distribution d'énergie concentrent des capitaux considérables et des risques techniques majeurs. HDI Global couvre l'ensemble de la chaîne énergétique — de l'amont pétrolier et gazier aux centrales de production, jusqu'aux infrastructures renouvelables — avec une ingénierie de risque dédiée et une capacité internationale.",
+      "La production et la distribution d'énergie concentrent des capitaux considérables et des risques techniques majeurs. ktayl-solution couvre l'ensemble de la chaîne énergétique — de l'amont pétrolier et gazier aux centrales de production, jusqu'aux infrastructures renouvelables — avec une ingénierie de risque dédiée et une capacité internationale.",
     services: [
       { title: 'Énergie Onshore & Offshore', description: "Couverture des installations d'exploration, de production et de raffinage pétrolières et gazières, à terre comme en mer." },
       { title: 'Production Électrique', description: "Assurance dommages et pertes d'exploitation des centrales thermiques, hydrauliques et de cogénération." },
@@ -167,13 +167,13 @@ export const lobs: LOB[] = [
   },
 ];
 
-export const hdiServices: HDIService[] = [
+export const ktaylServices: KtaylService[] = [
   {
     id: 'production',
     icon: `<svg ${svgAttrs}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
     name: 'Production',
     description:
-      "Pour répondre efficacement à ses clients, HDI Global a mis en place une organisation spécifique basée sur la qualité de la souscription, la réactivité des équipes dédiées et la capacité à proposer des solutions innovantes sur mesure.",
+      "Pour répondre efficacement à ses clients, ktayl-solution a mis en place une organisation spécifique basée sur la qualité de la souscription, la réactivité des équipes dédiées et la capacité à proposer des solutions innovantes sur mesure.",
   },
   {
     id: 'prevention',
@@ -187,21 +187,21 @@ export const hdiServices: HDIService[] = [
     icon: `<svg ${svgAttrs}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
     name: 'Réseau International',
     description:
-      "Pour accompagner ses clients présents à l'étranger, HDI met en place des programmes internationaux pouvant intégrer des polices locales émises dans plus de 130 pays, avec un service local adapté à chaque marché.",
+      "Pour accompagner ses clients présents à l'étranger, ktayl-solution met en place des programmes internationaux pouvant intégrer des polices locales émises dans plus de 130 pays, avec un service local adapté à chaque marché.",
   },
   {
     id: 'indemnisation',
     icon: `<svg ${svgAttrs}><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>`,
     name: 'Indemnisation',
     description:
-      "La survenance d'un sinistre peut s'avérer lourde de conséquences. HDI propose un véritable partenariat dans la gestion des sinistres, avec des experts dédiés qui accompagnent chaque client tout au long du processus d'indemnisation.",
+      "La survenance d'un sinistre peut s'avérer lourde de conséquences. ktayl-solution propose un véritable partenariat dans la gestion des sinistres, avec des experts dédiés qui accompagnent chaque client tout au long du processus d'indemnisation.",
   },
   {
     id: 'courtiers',
     icon: `<svg ${svgAttrs}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11v6"/><path d="M20 8h6"/></svg>`,
     name: 'Pour les Courtiers',
     description:
-      "HDI Global SE travaille à travers le courtage, dans une véritable relation partenaire basée sur la qualité et l'accompagnement sur le long terme. Outils dédiés, expertises métier et appui technique pour valoriser les clients des courtiers.",
+      "ktayl-solution travaille à travers le courtage, dans une véritable relation partenaire basée sur la qualité et l'accompagnement sur le long terme. Outils dédiés, expertises métier et appui technique pour valoriser les clients des courtiers.",
   },
   {
     id: 'financement-risques',
