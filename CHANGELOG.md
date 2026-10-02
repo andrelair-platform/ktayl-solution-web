@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.2](https://github.com/andrelair-platform/ktayl-solution-web/compare/ktayl-solution-web-v0.1.1...ktayl-solution-web-v0.1.2) (2026-10-02)
+
+
+### Features
+
+* **ci:** migrate to GitHub Pages, decommission cluster deployment ([e54b9c0](https://github.com/andrelair-platform/ktayl-solution-web/commit/e54b9c05c7d28dcf2c33572578381619ea874fd7))
+* **web:** complete the industrial B2B offering — 3 missing LOB lines + emerging-risks section ([#36](https://github.com/andrelair-platform/ktayl-solution-web/issues/36)) ([9b0ef8e](https://github.com/andrelair-platform/ktayl-solution-web/commit/9b0ef8e8f56d64b93d05b6fa2e329db32ea4c2c8))
+
+
+### Bug Fixes
+
+* **web:** reconcile brand stats off HDI's figures ([#38](https://github.com/andrelair-platform/ktayl-solution-web/issues/38)) ([135ce54](https://github.com/andrelair-platform/ktayl-solution-web/commit/135ce548410b3f6d864db9129555becd120dcdf5))
+* **web:** reconcile positioning to insurer (carrier), not broker/consultancy ([#39](https://github.com/andrelair-platform/ktayl-solution-web/issues/39)) ([76da9f1](https://github.com/andrelair-platform/ktayl-solution-web/commit/76da9f1eef2962a2155d2f91e73bedbca2c88473))
+* **web:** reconcile the whole site to one brand — ktayl-solution ([#37](https://github.com/andrelair-platform/ktayl-solution-web/issues/37)) ([c6c84a5](https://github.com/andrelair-platform/ktayl-solution-web/commit/c6c84a5898fd9e8ad61ca6e10aa52706ccafa6f0))
+* **web:** translate the /brand guidelines page to French (completes site-wide FR unification) ([#41](https://github.com/andrelair-platform/ktayl-solution-web/issues/41)) ([9e6e01a](https://github.com/andrelair-platform/ktayl-solution-web/commit/9e6e01aaae4aa18d080dcbe62530c8138d39cbe0))
+* **web:** unify client-facing site to French ([#40](https://github.com/andrelair-platform/ktayl-solution-web/issues/40)) ([86c1f7f](https://github.com/andrelair-platform/ktayl-solution-web/commit/86c1f7fec2ce7513037891fc01df78518c957295))
+
 ## [0.1.1](https://github.com/andrelair-platform/ktayl-solution-web/compare/ktayl-solution-web-v0.1.0...ktayl-solution-web-v0.1.1) (2026-08-14)
 
 
