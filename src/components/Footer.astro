@@ -1,5 +1,5 @@
 ---
-const lobs = ['Marine', 'Aviation', 'Property & Engineering', 'Liability', 'Financial Lines', 'Energy', 'Cyber'];
+const lobs = ['Marine', 'Aviation', 'Dommages & Ingénierie', 'Responsabilité Civile', 'Lignes Financières', 'Énergie', 'Cyber'];
 const services = ['Underwriting', 'Risk Engineering', 'Claims Management', 'International Programmes', 'Alternative Risk Transfer'];
 const year = new Date().getFullYear();
 ---
@@ -21,10 +21,10 @@ const year = new Date().getFullYear();
 
     <!-- Insurance Lines -->
     <div>
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Insurance Lines</h4>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Nos Assurances</h4>
       <ul class="space-y-2">
         {lobs.map(l => (
-          <li><a href={`/services#${l.toLowerCase().replace(/[^a-z]/g,'-')}`} class="text-sm text-slate-400 hover:text-white transition-colors">{l}</a></li>
+          <li><a href="/services" class="text-sm text-slate-400 hover:text-white transition-colors">{l}</a></li>
         ))}
       </ul>
     </div>
@@ -46,7 +46,7 @@ const year = new Date().getFullYear();
         <li>contact@ktayl-solution.com</li>
         <li>Paris, France</li>
         <li class="pt-2">
-          <a href="/#contact" class="btn-primary text-sm py-2 px-4">Get in touch</a>
+          <a href="/#contact" class="btn-primary text-sm py-2 px-4">Nous contacter</a>
         </li>
       </ul>
     </div>
@@ -54,10 +54,10 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-      <span>© {year} ktayl-solution. All rights reserved.</span>
+      <span>© {year} ktayl-solution. Tous droits réservés.</span>
       <span>
-        Powered by <a href="https://github.com/andrelair-platform" class="hover:text-slate-300 underline underline-offset-2">minicloud platform</a>
-        · Deployed via ArgoCD + Cloudflare
+        Propulsé par <a href="https://github.com/andrelair-platform" class="hover:text-slate-300 underline underline-offset-2">minicloud platform</a>
+        · Déployé via ArgoCD + Cloudflare
       </span>
     </div>
   </div>
