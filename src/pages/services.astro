@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { lobs, hdiServices } from '../data/lob';
+import { lobs, ktaylServices } from '../data/lob';
 ---
 
 <Layout title="Solutions & Services" description="ktayl-solution — Nos solutions d'assurance et services sur mesure : Propriété, Transport, Construction, RCMS, Collaborateurs, Demandes spécifiques. Production, Prévention, International, Indemnisation.">
@@ -22,7 +22,7 @@ import { lobs, hdiServices } from '../data/lob';
           </a>
         ))}
         <span class="self-center text-white/30 text-xs mx-1">|</span>
-        {hdiServices.map(s => (
+        {ktaylServices.map(s => (
           <a href={`#${s.id}`}
              class="text-xs font-semibold border border-[#E8690B]/50 text-[#E8690B] hover:bg-[#E8690B] hover:text-white px-3 py-1.5 rounded-full transition-colors">
             {s.name}
@@ -85,18 +85,18 @@ import { lobs, hdiServices } from '../data/lob';
     ))}
   </div>
 
-  <!-- SERVICES HDI -->
+  <!-- SERVICES -->
   <section class="py-24" style="background:#F4F7FA;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-14 max-w-2xl">
         <span class="section-label">Nos Services</span>
         <h2 class="text-4xl font-bold text-[#00375A]">Des services sur mesure sur l'ensemble de la chaîne de valeur</h2>
         <p class="text-slate-500 mt-4 text-lg leading-relaxed">
-          Au-delà de l'assurance, HDI Global propose une vaste gamme de services qui accompagnent nos clients tout au long de la vie de leur contrat et de leur activité.
+          Au-delà de l'assurance, ktayl-solution propose une vaste gamme de services qui accompagnent nos clients tout au long de la vie de leur contrat et de leur activité.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hdiServices.map(svc => (
+        {ktaylServices.map(svc => (
           <div id={svc.id} class="scroll-mt-20 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-[#00375A]/30 transition-all duration-200 p-7 flex flex-col gap-4">
             <div class="w-12 h-12 rounded-lg bg-[#00375A]/10 flex items-center justify-center text-[#00375A] shrink-0">
               <Fragment set:html={svc.icon} />
